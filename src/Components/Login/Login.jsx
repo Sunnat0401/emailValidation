@@ -10,9 +10,37 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (email.endsWith('@gmail.com') && firstName && lastName) {
-      localStorage.setItem('user', JSON.stringify({ firstName, lastName, email }));
-      navigate('/home');
+      fetch('https://fakestoreapi.com/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: 'mor_2314',
+          password: '83r5^_', 
+        }),
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error('Login muvaffaqiyatsiz bo"ldi');
+          }
+          return res.json();
+        })
+        .then((json) => {
+          if (json.token) {
+            localStorage.setItem('user', JSON.stringify({ firstName, lastName, email }));
+            localStorage.setItem('token', json.token);
+            navigate('/home');
+          } else {
+            alert('Login muvaffaqiyatsiz bo"ldi, iltimos qayta urinib ko"ring');
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Xatolik yuz berdi, iltimos qayta urinib ko"ring');
+        });
     } else {
       alert('Iltimos, barcha maydonlarni to"ldiring va @gmail.com bilan tugaydigan email kiriting');
     }
