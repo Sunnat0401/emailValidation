@@ -1,0 +1,44 @@
+.navbar {
+    background: rgba(1, 7, 13, 0.8); 
+    backdrop-filter: blur(100px); 
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: auto;
+  }
+  
+  .ant-btn {
+    color: #fff;
+    border: none;
+  }
+  
+  .navbar-btn {
+    color: #001529;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+
+  
