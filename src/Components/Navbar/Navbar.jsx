@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="container">
-      <Link  className='logo'  to={"/" }> <img src="/star.png" className='logo' alt="logo"/></Link>
+      <Link  className='logo'  to={"/home" }> <img src="/star.png" className='logo' alt="logo"/></Link>
         <Dropdown overlay={userMenu} trigger={['click']}>
           <Button
             style={{ marginTop: '14px' }}
