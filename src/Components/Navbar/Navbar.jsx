@@ -9,15 +9,15 @@ const Navbar = () => {
 
   
 
-  const goToProfile = () => {
-    const user = {
-      name: 'Ali',
-      surname: 'Vasiyev',
-      email: 'ali@gmail.com'
-    };
+  // const goToProfile = () => {
+  //   const user = {
+  //     name: 'Ali',
+  //     surname: 'Vasiyev',
+  //     email: 'ali@gmail.com'
+  //   };
 
-    navigate(`/profile?name=${user.name}&surname=${user.surname}&email=${user.email}`);
-  };
+  //   navigate(`/profile?name=${user.name}&surname=${user.surname}&email=${user.email}`);
+  // };
 
   const goToExit = () => {
     navigate('/'); 
@@ -25,9 +25,9 @@ const Navbar = () => {
 
   const userMenu = (
     <Menu>
-      <Menu.Item key="profile" icon={<UserOutlined />} onClick={goToProfile}>
+      {/* <Menu.Item key="profile" icon={<UserOutlined />} onClick={goToProfile}>
         Profil
-      </Menu.Item>
+      </Menu.Item> */}
       
       <Menu.Divider />
       <Menu.Item key="logout" icon={<LogoutOutlined />} onClick={goToExit}>

@@ -19,7 +19,7 @@ const Login = () => {
         },
         body: JSON.stringify({
           username: 'mor_2314',
-          password: '83r5^_', 
+          password: '83r5^_',
         }),
       })
         .then((res) => {
@@ -30,7 +30,10 @@ const Login = () => {
         })
         .then((json) => {
           if (json.token) {
-            localStorage.setItem('user', JSON.stringify({ firstName, lastName, email }));
+            const user = { firstName, lastName, email };
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
             localStorage.setItem('token', json.token);
             navigate('/home');
           } else {
