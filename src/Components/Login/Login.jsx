@@ -6,12 +6,15 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [loading, setLoading] = useState(false); // Loading holatini qo'shish
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (email.endsWith('@gmail.com') && firstName && lastName) {
+      setLoading(true); // Loadingni yoqish
+
       fetch('https://fakestoreapi.com/auth/login', {
         method: 'POST',
         headers: {
@@ -29,13 +32,14 @@ const Login = () => {
           return res.json();
         })
         .then((json) => {
+          console.log('Response:', json); // JSON javobini tekshiring
           if (json.token) {
             const user = { firstName, lastName, email };
             const users = JSON.parse(localStorage.getItem('users')) || [];
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
             localStorage.setItem('token', json.token);
-            navigate('/home');
+            navigate('/product');
           } else {
             alert('Login muvaffaqiyatsiz bo"ldi, iltimos qayta urinib ko"ring');
           }
@@ -43,6 +47,9 @@ const Login = () => {
         .catch((error) => {
           console.error('Error:', error);
           alert('Xatolik yuz berdi, iltimos qayta urinib ko"ring');
+        })
+        .finally(() => {
+          setLoading(false); // Loadingni o'chirish
         });
     } else {
       alert('Iltimos, barcha maydonlarni to"ldiring va @gmail.com bilan tugaydigan email kiriting');
@@ -77,7 +84,9 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <button type="submit" className="login-button">Login</button>
+          <button type="submit" className="login-button" disabled={loading}>
+            {loading ? 'Laoding...' : 'Login'}
+          </button>
         </form>
       </div>
     </div>

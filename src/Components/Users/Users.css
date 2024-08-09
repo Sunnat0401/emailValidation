@@ -1,0 +1,47 @@
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-table th,
+  .user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .users-subtitle{
+    padding: 20px 0;
+  }
+  .user-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .user-item input {
+    border: 1px solid #ccc;
+    padding: 4px;
+  }
+  .btn{
+    padding: 7px;
+    border-radius: 4px;
+    border: none;
+    margin:  0pc 5px;
+    color: #FFF;
+  }
+  .btn-success{
+    background-color: yellowgreen;
+
+  }
+  .btn-dark{
+    background-color: gray;
+  }
+  .btn-danger{
+    background-color: red;
+  }

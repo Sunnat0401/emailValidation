@@ -1,0 +1,65 @@
+.product-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    margin: 15px 0;
+    width: 300px;
+    height: 470px;
+    border: 2px solid #ddd;
+    padding: 15px;
+    border-radius: 10px; /* Boshlang'ich radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    border-color: #eae7e7;
+    border-radius: 20px; /* Hover paytida radiusni oshirish */
+  }
+  .product-information{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .product-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .product-decr {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6b6b;
+  }
+  .edit-btn{
+    background: green;
+
+  }
+  .delete-btn{
+   background-color: red;
+   margin-left: 10px;
+  }

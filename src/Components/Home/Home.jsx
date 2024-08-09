@@ -13,25 +13,7 @@ const Home = () => {
   return (
     <div className='home'>
       <Navbar />
-     
-      <table className='users-table'>
-        <thead>
-          <tr>
-            <th>Ism</th>
-            <th>Familiya</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={index}>
-              <td>{user.firstName}</td>
-              <td>{user.lastName}</td>
-              <td>{user.email}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+
     </div>
   );
 };
